@@ -24,7 +24,7 @@ function Login() {
     const sendLoginDaten=()=>{
       console.log(loginInfos.email + " "+ loginInfos.password);
     };
-//test
+//tests
     const ar = array.map(a=>
         <li key={a.name}>{a.name} anzahl = {a.anzahl}</li>
     );
