@@ -5,6 +5,7 @@ import Home from "./Components/Allgemein/Home";
 import {connect} from "./Connection/Websocket";
 import 'antd/dist/antd.css';
 import Login from "./Components/Bringer/Login";
+import Register from "./Components/Bringer/Register";
 
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
           <Switch>
             <Route path = "/" exact component={Home} />
             <Route path = "/login" exact component={Login}/>
+            <Route path = "/register" exact component={Register}/>
+
           </Switch>
 
         </div>

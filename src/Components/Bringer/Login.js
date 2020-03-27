@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import "./Login.css"
-import Home from "../Allgemein/Home";
 import {Checkbox} from "antd";
 
 function Login() {
@@ -12,8 +11,7 @@ function Login() {
     const emailChanger =(event)=>{
         setLoginin({
             email: event.target.value,
-            password: loginInfos.password
-        });
+            password: loginInfos.password});
     };
     const passwordChanger =(event)=>{
         setLoginin({
