@@ -21,7 +21,7 @@ function Login() {
             password: event.target.value
         });
     };
-//test ali
+//test alia
     const sendLoginDaten=()=>{
       console.log(loginInfos.email + " "+ loginInfos.password);
     };
