@@ -19,11 +19,10 @@ function Login() {
             password: event.target.value
         });
     };
-
     const sendLoginDaten=()=>{
       console.log(loginInfos.email + " "+ loginInfos.password);
     };
-
+//tests
     const ar = array.map(a=>
         <li key={a.name}>{a.name} anzahl = {a.anzahl}</li>
     );
