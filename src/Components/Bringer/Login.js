@@ -21,11 +21,10 @@ function Login() {
             password: event.target.value
         });
     };
-//test alia
     const sendLoginDaten=()=>{
       console.log(loginInfos.email + " "+ loginInfos.password);
     };
-
+//test
     const ar = array.map(a=>
         <li key={a.name}>{a.name} anzahl = {a.anzahl}</li>
     );
