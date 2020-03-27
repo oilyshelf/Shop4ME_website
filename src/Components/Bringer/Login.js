@@ -28,7 +28,7 @@ function Login() {
     );
     const checkboxchanger =(e)=>{
         console.log(`checked = ${e.target.checked}`);
-    }
+    };
 
 
     return(

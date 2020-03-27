@@ -84,12 +84,11 @@ function Register() {
 
     const sendRegisterDaten=()=>{
         console.log(RegisterInfo.email + " "+ RegisterInfo.password + " " + RegisterInfo.passwort2);
-    };
-
-    const sendAdressDaten=()=>{
         console.log(adressInfo.adress +" "+ adressInfo.Hausnummer +" "+ adressInfo.PLZ +" "
             +adressInfo.Ort +" "+ adressInfo.Bundesland);
     };
+
+
 
 
 
@@ -109,7 +108,7 @@ function Register() {
                 <input  value={adressInfo.Bundesland} placeholder="Bundesland" onChange={BundeslandChanger.bind(this)}/>
 
 
-                <button  onClick={sendRegisterDaten + sendAdressDaten}>Registrieren</button>
+                <button  onClick={sendRegisterDaten}>Registrieren</button>
             </div>
         </div>
     );
