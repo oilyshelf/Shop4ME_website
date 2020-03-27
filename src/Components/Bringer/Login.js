@@ -7,7 +7,7 @@ function Login() {
 
     const [loginInfos,setLoginin] = useState({email:"", password: ""});
 
-    const array = [{name:"mehl", anzahl:2}, {name:"zucker", anzahl: 3}];
+    const array = [{name:"mehl", anzahl:2}, {name:"zucker", anzahl: 3}, {name:"nutella", anzahl: 5}];
 
     const emailChanger =(event)=>{
         setLoginin({
@@ -46,8 +46,6 @@ function Login() {
             </div>
         </div>
     );
-
-
 }
 
 export default Login;
