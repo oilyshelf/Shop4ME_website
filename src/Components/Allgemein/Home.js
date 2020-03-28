@@ -4,13 +4,13 @@ import "./Home.css"
 function Home(probs) {
 
     const shop=()=>{
-        window.open("/shop");
+        probs.history.push("/shop");
     };
     const login=()=>{
-        window.open("/login");
+        probs.history.push("/login");
     };
     const register=()=>{
-        window.open("/register");
+        probs.history.push("/register");
     };
 //
 
@@ -19,6 +19,7 @@ function Home(probs) {
             <h1>Home</h1>
             <div>
                 <button  onClick={shop}>Shop</button>
+                <br/>
                 <button  onClick={login}>Login</button>
                 <button  onClick={register}>Register</button>
             </div>

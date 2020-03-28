@@ -25,7 +25,7 @@ function Shop(probs) {
 
     return(
         <div className="Shop">
-            <h1>Home</h1>
+            <h1>Shop</h1>
             <div>
                 <button  onClick={bread}>Bread</button>
                 <button  onClick={flour}>Flour</button>
