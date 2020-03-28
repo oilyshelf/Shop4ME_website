@@ -110,21 +110,21 @@ function Register() {
 
     const sendRegisterDaten=()=>{
         console.log(RegisterInfo.email + " "+ RegisterInfo.password + " " + RegisterInfo.passwort2 +" "
-            + RegisterInfo.Vorname +" "+ RegisterInfo.Nachname);
+            + RegisterInfo.Vorname +" "+ RegisterInfo.Nachname +" "+ adressInfo.adress +" "+ adressInfo.Hausnummer +" "
+            + adressInfo.PLZ +" "+ adressInfo.Ort +" "+ adressInfo.Bundesland);
     };
 
-    const sendAdressDaten=()=>{
-        console.log(adressInfo.adress +" "+ adressInfo.Hausnummer +" "+ adressInfo.PLZ +" "
-            +adressInfo.Ort +" "+ adressInfo.Bundesland);
+    const mystyle = {
+        color: "white",
+        backgroundColor: "DodgerBlue",
+        padding: "10px",
+        fontFamily: "Arial"
     };
-
-
-
 
 
     return(
         <div className="Register">
-            <h1>Register</h1>
+            <h1 style={mystyle}>Register</h1>
             <div>
                 <input  value={RegisterInfo.email} placeholder="E-Mail" onChange={emailChanger.bind(this)}/>
                 <input  value={RegisterInfo.password} placeholder="Passwort" onChange={passwordChanger.bind(this)}/>
@@ -139,8 +139,10 @@ function Register() {
                 <input  value={adressInfo.Ort} placeholder="Ort" onChange={OrtChanger.bind(this)}/>
                 <input  value={adressInfo.Bundesland} placeholder="Bundesland" onChange={BundeslandChanger.bind(this)}/>
 
+                {/*  Bundesland in selection umschreiben
+                        rausfinden warum register.css für alle gilt */}
 
-                <button  onClick={sendRegisterDaten + sendAdressDaten}>Registrieren</button>
+                <button  onClick={sendRegisterDaten}>Registrieren</button>
             </div>
         </div>
     );

@@ -1,0 +1,25 @@
+body{
+    background-color: #0077FF;
+    color: white;
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+}
+
+button{
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+input{
+    padding: 20px;
+    margin: auto;
+    border-radius: 8px;
+}
