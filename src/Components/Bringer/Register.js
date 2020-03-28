@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./Register.css"
 import {Select} from 'antd';
 
-function Register() {
+function Register(probs) {
 
     const [RegisterInfo, setRegistration] = useState({email:"", passwort:"", passwort2:"", Vorname:"", Nachname:""});
 
@@ -125,17 +125,14 @@ function Register() {
     const { Option } = Select;
 
     const home=()=>{
-        window.open("/");
+        probs.history.push("/");
     };
 
-    const shop=()=>{
-        window.open("/shop");
-    };
 
     return(
         <div className="Register">
 
-            <h1 style={mystyle}>Register <div> <button  onClick={home}>home</button> <button  onClick={shop}>shop</button></div></h1>
+            <h1 style={mystyle}>Register <div> <button  onClick={home}>home</button> </div></h1>
             <div>
                 <input className="Register" value={RegisterInfo.Vorname} placeholder="Vorname" onChange={VornameChanger.bind(this)}/>
                 <input className="Register" value={RegisterInfo.Nachname} placeholder="Nachname" onChange={NachnameChanger.bind(this)}/><br/>

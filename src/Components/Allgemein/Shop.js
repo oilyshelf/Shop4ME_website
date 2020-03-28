@@ -23,9 +23,13 @@ function Shop(probs) {
     };
 //
 
+    const home=()=>{
+        probs.history.push("/");
+    };
+
     return(
         <div className="Shop">
-            <h1>Shop</h1>
+            <h1>Shop <div> <button  onClick={home}>home</button> </div></h1>
             <div>
                 <button  onClick={bread}>Bread</button>
                 <button  onClick={flour}>Flour</button>

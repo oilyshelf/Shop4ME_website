@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./Login.css"
 import {Checkbox} from "antd";
 
-function Login() {
+function Login(probs) {
 
     const [loginInfos,setLoginin] = useState({email:"", password: ""});
 
@@ -30,10 +30,14 @@ function Login() {
         console.log(`checked = ${e.target.checked}`);
     };
 
+    const home=()=>{
+        probs.history.push("/");
+    };
+
 
     return(
         <div className="Login">
-            <h1>Login</h1>
+            <h1>Login <div> <button  onClick={home}>home</button> </div></h1>
             <div>
                 <input  value={loginInfos.email} placeholder="email" onChange={emailChanger.bind(this)}/>
                 <input type="password" placeholder="password" value={loginInfos.password} onChange={passwordChanger.bind(this)}/>
