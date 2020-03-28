@@ -124,11 +124,19 @@ function Register() {
 
     const { Option } = Select;
 
+    const home=()=>{
+        window.open("/");
+    };
+
+    const shop=()=>{
+        window.open("/shop");
+    };
 
     return(
         <div className="Register">
-            <h1 style={mystyle}>Register</h1>
-            <div >
+
+            <h1 style={mystyle}>Register <div> <button  onClick={home}>home</button> <button  onClick={shop}>shop</button></div></h1>
+            <div>
                 <input className="Register" value={RegisterInfo.Vorname} placeholder="Vorname" onChange={VornameChanger.bind(this)}/>
                 <input className="Register" value={RegisterInfo.Nachname} placeholder="Nachname" onChange={NachnameChanger.bind(this)}/><br/>
                 <input className="Register" value={RegisterInfo.email} placeholder="E-Mail" onChange={emailChanger.bind(this)}/><br/>
@@ -164,6 +172,7 @@ function Register() {
                         rausfinden warum register.css für alle gilt */}
 
                 <button className="Register" onClick={sendRegisterDaten}>Registrieren</button>
+
             </div>
         </div>
     );
