@@ -1,6 +1,5 @@
 import React, {useState} from "react";
-import "./Home.css"
-import Home from "./Home";
+import "./Shop.css"
 
 function Shop(probs) {
 

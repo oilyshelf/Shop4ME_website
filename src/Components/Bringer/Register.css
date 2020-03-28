@@ -1,12 +1,12 @@
-body.Register{
-    background-color: #0077FF;
+body{
+    background: aqua;
     color: white;
     padding: 40px;
     font-family: Arial;
     text-align: center;
 }
 
-button.Register{
+button{
     background-color: #4CAF50;
     border: none;
     border-radius: 8px;
@@ -18,7 +18,7 @@ button.Register{
     font-size: 16px;
 }
 
-input.Register{
+input{
     padding: 20px;
     margin: auto;
     border-radius: 8px;
