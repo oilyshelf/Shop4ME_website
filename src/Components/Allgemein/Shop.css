@@ -11,6 +11,14 @@ button{
     font-size: 16px;
 }
 
+body{
+    background: aqua;
+    color: white;
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+}
+
 input{
     padding: 20px;
     margin: auto;

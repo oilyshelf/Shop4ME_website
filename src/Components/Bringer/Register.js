@@ -132,6 +132,8 @@ function Register(probs) {
     return(
         <div className="Register">
 
+
+
             <h1 style={mystyle}>Register <div> <button  onClick={home}>home</button> </div></h1>
             <div>
                 <input className="Register" value={RegisterInfo.Vorname} placeholder="Vorname" onChange={VornameChanger.bind(this)}/>
@@ -171,6 +173,7 @@ function Register(probs) {
                 <button className="Register" onClick={sendRegisterDaten}>Registrieren</button>
 
             </div>
+
         </div>
     );
 }

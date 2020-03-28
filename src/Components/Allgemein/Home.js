@@ -23,6 +23,7 @@ function Home(probs) {
                 <button  onClick={login}>Login</button>
                 <button  onClick={register}>Register</button>
             </div>
+
         </div>
     );
 }
