@@ -129,17 +129,18 @@ function Register() {
         <div className="Register">
             <h1 style={mystyle}>Register</h1>
             <div >
-                <input className="Register" value={RegisterInfo.email} placeholder="E-Mail" onChange={emailChanger.bind(this)}/>
-                <input className="Register" value={RegisterInfo.password} placeholder="Passwort" onChange={passwordChanger.bind(this)}/>
-                <input className="Register" value={RegisterInfo.password2} placeholder="Passwort wiederholen" onChange={password2Changer.bind(this)}/>
                 <input className="Register" value={RegisterInfo.Vorname} placeholder="Vorname" onChange={VornameChanger.bind(this)}/>
-                <input className="Register" value={RegisterInfo.Nachname} placeholder="Nachname" onChange={NachnameChanger.bind(this)}/>
+                <input className="Register" value={RegisterInfo.Nachname} placeholder="Nachname" onChange={NachnameChanger.bind(this)}/><br/>
+                <input className="Register" value={RegisterInfo.email} placeholder="E-Mail" onChange={emailChanger.bind(this)}/><br/>
+                <input className="Register" value={RegisterInfo.password} placeholder="Passwort" onChange={passwordChanger.bind(this)}/><br/>
+                <input className="Register" value={RegisterInfo.password2} placeholder="Passwort wiederholen" onChange={password2Changer.bind(this)}/><br/>
+
 
 
                 <input className="Register" value={adressInfo.adress} placeholder="Adresse" onChange={adressChanger.bind(this)}/>
-                <input className="Register" value={adressInfo.Hausnummer} placeholder="Nr." onChange={HausnummerChanger.bind(this)}/>
-                <input className="Register" value={adressInfo.PLZ} placeholder="PLZ" onChange={PLZChanger.bind(this)}/>
-                <input className="Register" value={adressInfo.Ort} placeholder="Ort" onChange={OrtChanger.bind(this)}/>
+                <input className="Register" value={adressInfo.Hausnummer} placeholder="Nr." onChange={HausnummerChanger.bind(this)}/><br/>
+                <input className="Register" value={adressInfo.PLZ} placeholder="PLZ" onChange={PLZChanger.bind(this)}/><br/>
+                <input className="Register" value={adressInfo.Ort} placeholder="Ort" onChange={OrtChanger.bind(this)}/><br/>
                 <Select className="Register" defaultValue={"Bundesland"}  onChange={BundeslandChanger.bind(this)}>
                     <Option value = "Bayern">Bayern</Option>
                     <Option value = "Baden-Württemberg">Baden-Württemberg</Option>
@@ -157,7 +158,7 @@ function Register() {
                     <Option value = "Sachen-Anhalt">Sachen-Anhalt</Option>
                     <Option value = "Schleswig-Holstein">Schleswig-Holstein</Option>
                     <Option value = "Thüringen">Thüringen</Option>
-                </Select>
+                </Select><br/>
 
                 {/*  Bundesland in selection umschreiben
                         rausfinden warum register.css für alle gilt */}
