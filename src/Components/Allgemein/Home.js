@@ -4,7 +4,7 @@ import "./Home.css"
 function Home(probs) {
 
     const shop=()=>{
-        //window.open("/shop");
+        window.open("/shop");
     };
     const login=()=>{
         window.open("/login");
@@ -25,6 +25,7 @@ function Home(probs) {
         </div>
     );
 }
+
 
 
 
