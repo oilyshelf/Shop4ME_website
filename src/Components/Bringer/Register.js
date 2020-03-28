@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./Register.css"
+import {Select} from 'antd';
 
 function Register() {
 
@@ -105,7 +106,7 @@ function Register() {
             Ort: adressInfo.Ort,
             Bundesland: event.target.value
         });
-    };
+    }
 
 
     const sendRegisterDaten=()=>{
@@ -120,6 +121,8 @@ function Register() {
         padding: "10px",
         fontFamily: "Arial"
     };
+
+    const { Option } = Select;
 
 
     return(
@@ -137,7 +140,24 @@ function Register() {
                 <input className="Register" value={adressInfo.Hausnummer} placeholder="Nr." onChange={HausnummerChanger.bind(this)}/>
                 <input className="Register" value={adressInfo.PLZ} placeholder="PLZ" onChange={PLZChanger.bind(this)}/>
                 <input className="Register" value={adressInfo.Ort} placeholder="Ort" onChange={OrtChanger.bind(this)}/>
-                <input className="Register" value={adressInfo.Bundesland} placeholder="Bundesland" onChange={BundeslandChanger.bind(this)}/>
+                <Select className="Register" defaultValue={"Bundesland"}  onChange={BundeslandChanger.bind(this)}>
+                    <Option value = "Bayern">Bayern</Option>
+                    <Option value = "Baden-Württemberg">Baden-Württemberg</Option>
+                    <Option value = "Berlin">Berlin</Option>
+                    <Option value = "Brandenburg">Brandenburg</Option>
+                    <Option value = "Bremen">Bremen</Option>
+                    <Option value = "Hamburg">Hamburg</Option>
+                    <Option value = "Hessen">Hessen</Option>
+                    <Option value = "Mecklenburg-Vorpommern">Mecklenburg-Vorpommern</Option>
+                    <Option value = "Niedersachsen">Niedersachsen</Option>
+                    <Option value = "Nordrhein-Westfalen">Nordrhein-Westfalen</Option>
+                    <Option value = "Rheinland-Pfalz">Rheinland-Pfalz</Option>
+                    <Option value = "Saarland">Saarland</Option>
+                    <Option value = "Sachsen">Sachsen</Option>
+                    <Option value = "Sachen-Anhalt">Sachen-Anhalt</Option>
+                    <Option value = "Schleswig-Holstein">Schleswig-Holstein</Option>
+                    <Option value = "Thüringen">Thüringen</Option>
+                </Select>
 
                 {/*  Bundesland in selection umschreiben
                         rausfinden warum register.css für alle gilt */}

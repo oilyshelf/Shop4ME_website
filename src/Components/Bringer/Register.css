@@ -23,3 +23,10 @@ input{
     margin: auto;
     border-radius: 8px;
 }
+
+Select.Register{
+    padding: 20px;
+    margin: auto;
+    border-radius: 8px;
+    width: 220px;
+}
