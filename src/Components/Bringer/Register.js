@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 import "./Register.css"
-import {register} from "../../serviceWorker";
 
 function Register() {
 
-    const [RegisterInfo, setRegistration] = useState({email:"", passwort:"", passwort2:"", Vorname:"", Nachname:""});
+    const [RegisterInfo, setRegistration] = useState({email:"", passwort:"", passwort2:""});
 
     const [adressInfo, setAdress] = useState({adress:"",Hausnummer:"", PLZ:"",Ort:"", Bundesland:""});
 
@@ -12,9 +11,7 @@ function Register() {
         setRegistration({
             email: event.target.value,
             password: RegisterInfo.password,
-            password2: RegisterInfo.password2,
-            Vorname: RegisterInfo.Vorname,
-            Nachname: RegisterInfo.Nachname
+            password2: RegisterInfo.password2
         });
     };
 
@@ -22,9 +19,7 @@ function Register() {
         setRegistration({
             email: RegisterInfo.email,
             password: event.target.value,
-            password2: RegisterInfo.password2,
-            Vorname: RegisterInfo.Vorname,
-            Nachname: RegisterInfo.Nachname
+            password2: RegisterInfo.password2
         });
     };
 
@@ -32,29 +27,7 @@ function Register() {
         setRegistration({
             email: RegisterInfo.email,
             password: RegisterInfo.password,
-            password2: event.target.value,
-            Vorname: RegisterInfo.Vorname,
-            Nachname: RegisterInfo.Nachname
-        });
-    };
-
-    const VornameChanger =(event)=>{
-        setRegistration({
-            email: RegisterInfo.email,
-            password: RegisterInfo.password,
-            password2: RegisterInfo.password2,
-            Vorname: event.target.value,
-            Nachname: RegisterInfo.Nachname
-        });
-    };
-
-    const NachnameChanger =(event)=>{
-        setRegistration({
-            email: RegisterInfo.email,
-            password: RegisterInfo.password,
-            password2: RegisterInfo.password2,
-            Vorname: RegisterInfo.Vorname,
-            Nachname: event.target.value
+            password2: event.target.value
         });
     };
 
@@ -110,8 +83,7 @@ function Register() {
 
 
     const sendRegisterDaten=()=>{
-        console.log(RegisterInfo.email + " "+ RegisterInfo.password + " " + RegisterInfo.passwort2+" "
-            +RegisterInfo.Vorname +" "+ RegisterInfo.Nachname);
+        console.log(RegisterInfo.email + " "+ RegisterInfo.password + " " + RegisterInfo.passwort2);
     };
 
     const sendAdressDaten=()=>{
@@ -130,9 +102,6 @@ function Register() {
                 <input  value={RegisterInfo.email} placeholder="E-Mail" onChange={emailChanger.bind(this)}/>
                 <input  value={RegisterInfo.password} placeholder="Passwort" onChange={passwordChanger.bind(this)}/>
                 <input  value={RegisterInfo.password2} placeholder="Passwort wiederholen" onChange={password2Changer.bind(this)}/>
-                <input  value={RegisterInfo.Vorname} placeholder="Vorname" onChange={VornameChanger.bind(this)}/>
-                <input  value={RegisterInfo.Nachname} placeholder="Nachname" onChange={NachnameChanger.bind(this)}/>
-
                 <input  value={adressInfo.adress} placeholder="Adresse" onChange={adressChanger.bind(this)}/>
                 <input  value={adressInfo.Hausnummer} placeholder="Nr." onChange={HausnummerChanger.bind(this)}/>
                 <input  value={adressInfo.PLZ} placeholder="PLZ" onChange={PLZChanger.bind(this)}/>
