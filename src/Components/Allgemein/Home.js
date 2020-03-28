@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./Home.css"
 
-function Home() {
+function Home(probs) {
 
     const shop=()=>{
         //window.open("/shop");
@@ -15,7 +15,7 @@ function Home() {
 //
 
     return(
-        <div className="Login">
+        <div className="Home">
             <h1>Home</h1>
             <div>
                 <button  onClick={shop}>Shop</button>

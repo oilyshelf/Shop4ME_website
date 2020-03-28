@@ -1,4 +1,4 @@
-body{
+body.Register{
     background-color: #0077FF;
     color: white;
     padding: 40px;
@@ -6,7 +6,7 @@ body{
     text-align: center;
 }
 
-button{
+button.Register{
     background-color: #4CAF50;
     border: none;
     border-radius: 8px;
@@ -18,7 +18,7 @@ button{
     font-size: 16px;
 }
 
-input{
+input.Register{
     padding: 20px;
     margin: auto;
     border-radius: 8px;
