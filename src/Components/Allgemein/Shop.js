@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./Shop.css"
+import logo from "../../Bilder/shop.png";
 
 function Shop(probs) {
 
@@ -29,7 +30,7 @@ function Shop(probs) {
 
     return(
         <div className="Shop">
-            <h1>Shop <div> <button  onClick={home}>home</button> </div></h1>
+            <h1><img src={logo} width="150px" height="90px" align="center" alt="Shop"/> <div> <button  onClick={home}>home</button> </div></h1>
             <div>
                 <button  onClick={bread}>Bread</button>
                 <button  onClick={flour}>Flour</button>

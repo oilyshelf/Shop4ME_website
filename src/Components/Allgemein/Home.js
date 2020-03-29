@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./Home.css"
+import logo from "./../../Bilder/home.png"
 
 function Home(probs) {
 
@@ -16,7 +17,7 @@ function Home(probs) {
 
     return(
         <div className="Home">
-            <h1>Home</h1>
+            <h1> <img src={logo} width="150px" height="90px" align="center" alt="Home"/> </h1>
             <div>
                 <button  onClick={shop}>Shop</button>
                 <br/>

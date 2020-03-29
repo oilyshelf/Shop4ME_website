@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./Login.css"
 import {Checkbox} from "antd";
+import logo from "../../Bilder/login.png";
 
 function Login(probs) {
 
@@ -39,7 +40,7 @@ function Login(probs) {
 
     return(
         <div className="Login">
-            <h1>Login <div> <button  onClick={home}>home</button> </div></h1>
+            <h1><img src={logo} width="150px" height="90px" align="center" alt="Login"/><div> <button  onClick={home}>home</button> </div></h1>
             <div>
                 <input  value={loginInfos.email} placeholder="email" onChange={emailChanger.bind(this)}/>
                 <input type="password" placeholder="password" value={loginInfos.password} onChange={passwordChanger.bind(this)}/>

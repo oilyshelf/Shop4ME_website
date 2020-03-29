@@ -16,17 +16,12 @@ function App() {
        //connect();
     },[]);
 
-    const mystyle = {
-        color: "white",
-        backgroundColor: "DodgerBlue",
-        padding: "10px",
-        fontFamily: "Arial"
-    };
+
 
   return (
       <Router>
         <div >
-            <h1 style={mystyle}><img src={logo} width="150px" height="150px" align="center" alt="Shop4Me"/> </h1>
+            <h1><img src={logo} width="150px" height="150px" align="center" alt="Shop4Me"/> </h1>
 
 
           <Switch>

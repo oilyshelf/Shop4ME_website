@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./Register.css"
 import {Select} from 'antd';
+import logo from "../../Bilder/register.png";
 
 function Register(probs) {
 
@@ -138,7 +139,7 @@ function Register(probs) {
 
 
 
-            <h1>Register <div> <button  onClick={home}>home</button> </div></h1>
+            <h1><img src={logo} width="180px" height="90px" align="center" alt="Register"/> <div> <button  onClick={home}>home</button> </div></h1>
             <div>
                 <input className="Register" value={RegisterInfo.Vorname} placeholder="Vorname" onChange={VornameChanger.bind(this)}/>
                 <input className="Register" value={RegisterInfo.Nachname} placeholder="Nachname" onChange={NachnameChanger.bind(this)}/><br/>
