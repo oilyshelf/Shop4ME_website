@@ -7,7 +7,7 @@ import 'antd/dist/antd.css';
 import Login from "./Components/Bringer/Login";
 import Shop from "./Components/Allgemein/Shop";
 import Register from "./Components/Bringer/Register";
-import logo from './Bilder/Logo2.svg'
+import logo from './Bilder/Logo.svg'
 import Auftrag from "./Components/Bringer/Auftrag";
 import meinAuftrag from "./Components/Bringer/meinAuftrag";
 import derAuftrag from "./Components/Bringer/derAuftrag";
