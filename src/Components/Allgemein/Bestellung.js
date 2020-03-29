@@ -6,7 +6,7 @@ function Bestellung(probs) {
 
     const layout = {
         labelCol: {
-            span: 8,
+            span: 4,
         },
         wrapperCol: {
             span: 16,
@@ -54,9 +54,9 @@ function Bestellung(probs) {
                 <Form.Item name={['user', 'introduction']} label="Notes">
                     <Input.TextArea />
                 </Form.Item>
-                <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+                <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 4 }}>
                     <Button type="primary" htmlType="submit">
-                        Submit
+                        Bestellung aufgeben
                     </Button>
                 </Form.Item>
             </Form>
