@@ -106,7 +106,7 @@ function Register(probs) {
             Ort: adressInfo.Ort,
             Bundesland: event.target.value
         });
-    }
+    };
 
 
     const sendRegisterDaten=()=>{
@@ -128,6 +128,10 @@ function Register(probs) {
         probs.history.push("/");
     };
 
+    function BundeslandChange(value) {
+        console.log(`selected ${value}`);
+    }
+
 
     return(
         <div className="Register">
@@ -139,8 +143,8 @@ function Register(probs) {
                 <input className="Register" value={RegisterInfo.Vorname} placeholder="Vorname" onChange={VornameChanger.bind(this)}/>
                 <input className="Register" value={RegisterInfo.Nachname} placeholder="Nachname" onChange={NachnameChanger.bind(this)}/><br/>
                 <input className="Register" value={RegisterInfo.email} placeholder="E-Mail" onChange={emailChanger.bind(this)}/><br/>
-                <input className="Register" value={RegisterInfo.password} placeholder="Passwort" onChange={passwordChanger.bind(this)}/><br/>
-                <input className="Register" value={RegisterInfo.password2} placeholder="Passwort wiederholen" onChange={password2Changer.bind(this)}/><br/>
+                <input className="Register" value={RegisterInfo.password} placeholder="Passwort" onChange={passwordChanger.bind(this)} type="password"/><br/>
+                <input className="Register" value={RegisterInfo.password2} placeholder="Passwort wiederholen" onChange={password2Changer.bind(this)} type="password"/><br/>
 
 
 
@@ -148,7 +152,7 @@ function Register(probs) {
                 <input className="Register" value={adressInfo.Hausnummer} placeholder="Nr." onChange={HausnummerChanger.bind(this)}/><br/>
                 <input className="Register" value={adressInfo.PLZ} placeholder="PLZ" onChange={PLZChanger.bind(this)}/><br/>
                 <input className="Register" value={adressInfo.Ort} placeholder="Ort" onChange={OrtChanger.bind(this)}/><br/>
-                <Select className="Register" defaultValue={"Bundesland"}  onChange={BundeslandChanger.bind(this)}>
+                <Select className="Register" defaultValue={"Bundesland"}  onChange={BundeslandChange(this)}>
                     <Option value = "Bayern">Bayern</Option>
                     <Option value = "Baden-Württemberg">Baden-Württemberg</Option>
                     <Option value = "Berlin">Berlin</Option>
