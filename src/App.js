@@ -19,7 +19,7 @@ function App() {
   return (
       <Router>
         <div >
-            <header><img src={logo} alt="Shop4Me"/> </header>
+            <header><img src={logo} width="150px" height="150px" align="left" alt="Shop4Me"/> </header>
 
           <Switch>
             <Route path = "/" exact component={Home} />
