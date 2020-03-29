@@ -12,6 +12,8 @@ import Auftrag from "./Components/Bringer/Auftrag";
 import meinAuftrag from "./Components/Bringer/meinAuftrag";
 import derAuftrag from "./Components/Bringer/derAuftrag";
 import Bestellung from "./Components/Allgemein/Bestellung";
+import background from "./Bilder/background.png"
+import "./App.css"
 
 
 function App() {
@@ -24,7 +26,7 @@ function App() {
 
   return (
       <Router>
-        <div >
+        <div className="container">
             <h1><img src={logo} width="150px" height="150px" align="center" alt="Shop4Me"/> </h1>
 
 
