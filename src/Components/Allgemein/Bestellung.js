@@ -13,10 +13,8 @@ function Bestellung(probs) {
         },
     };
 
-
-    const Demo = () => {
-        const onFinish = values => {
-            console.log(values);
+    const onFinish = values => {
+        console.log(values);
         };
 
         return (
@@ -61,11 +59,6 @@ function Bestellung(probs) {
                 </Form.Item>
             </Form>
         );
-    };
-
-    return(
-        <Demo/>
-    );
 
 
 }

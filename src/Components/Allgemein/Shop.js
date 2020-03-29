@@ -64,7 +64,7 @@ function Shop(probs) {
         }}>remove 1 from List</Button>
       </span>
         ),
-    },];
+    }];
 
     const nextOnClick=()=>{
         let itemList = [], x ;

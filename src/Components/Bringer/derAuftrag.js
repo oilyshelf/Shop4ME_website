@@ -1,14 +1,17 @@
 import React, {useState} from "react";
 import {Button} from "antd";
 
-function derAuftrag()
+function derAuftrag(probs)
 {
 
 
 
     return(
       <div>
-          <Button type="primary">zurück</Button>
+          <h1> Auftrag {probs.match.params.id}</h1>
+          <Button onClick={()=>{
+              probs.history.goBack();
+          }} type="primary">zurück</Button>
       </div>
     );
 }

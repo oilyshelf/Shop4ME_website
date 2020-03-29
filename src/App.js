@@ -10,6 +10,7 @@ import Register from "./Components/Bringer/Register";
 import logo from './Bilder/Logo.svg'
 import Auftrag from "./Components/Bringer/Auftrag";
 import meinAuftrag from "./Components/Bringer/meinAuftrag";
+import derAuftrag from "./Components/Bringer/derAuftrag";
 import Bestellung from "./Components/Allgemein/Bestellung";
 
 
@@ -32,9 +33,10 @@ function App() {
             <Route path = "/login" exact component={Login}/>
             <Route path = "/register" exact component={Register}/>
             <Route path = "/shop" exact component={Shop}/>
-            <Route path = "/Auftrag" exact component = {Auftrag}/>
-            <Route path = "/meinAuftrag" exact component = {meinAuftrag}/>
             <Route path = "/Bestellung" exact component={Bestellung}/>
+            <Route path = "/Errand" exact component = {Auftrag}/>
+            <Route path = "/myErrands" exact component = {meinAuftrag}/>
+            <Route path="/Errand/:id"  component={derAuftrag}/>
 
           </Switch>
 

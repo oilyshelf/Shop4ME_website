@@ -99,13 +99,13 @@ function Register(probs) {
         });
     };
 
-    const BundeslandChanger =(event)=>{
+    const BundeslandChanger =(value)=>{
         setAdress({
             adress: adressInfo.adress,
             Hausnummer: adressInfo.Hausnummer,
             PLZ: adressInfo.PLZ,
             Ort: adressInfo.Ort,
-            Bundesland: event.target.value
+            Bundesland: value
         });
     };
 
@@ -129,9 +129,7 @@ function Register(probs) {
         probs.history.push("/");
     };
 
-    function BundeslandChange(value) {
-        console.log(`selected ${value}`);
-    }
+
 
 
     return(
@@ -153,7 +151,7 @@ function Register(probs) {
                 <input className="Register" value={adressInfo.Hausnummer} placeholder="Nr." onChange={HausnummerChanger.bind(this)}/><br/>
                 <input className="Register" value={adressInfo.PLZ} placeholder="PLZ" onChange={PLZChanger.bind(this)}/><br/>
                 <input className="Register" value={adressInfo.Ort} placeholder="Ort" onChange={OrtChanger.bind(this)}/><br/>
-                <Select className="Register" defaultValue={"Bundesland"}  onChange={BundeslandChange(this)}>
+                <Select className="Register" defaultValue={"Bayern"}  onChange={BundeslandChanger}>
                     <Option value = "Bayern">Bayern</Option>
                     <Option value = "Baden-Württemberg">Baden-Württemberg</Option>
                     <Option value = "Berlin">Berlin</Option>
