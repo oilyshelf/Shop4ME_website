@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./Home.css"
 import logo from "./../../Bilder/home.png"
+import {Button} from "antd";
 
 function Home(probs) {
 
@@ -19,10 +20,11 @@ function Home(probs) {
         <div className="Home">
             <h1> <img src={logo} width="150px" height="90px" align="center" alt="Home"/> </h1>
             <div>
-                <button  onClick={shop}>Shop</button>
+                <Button type="primary"  onClick={shop}>Shop</Button>
                 <br/>
-                <button  onClick={login}>Login</button>
-                <button  onClick={register}>Register</button>
+                <Button type="primary" onClick={login}>Login</Button>
+                <br/>
+                <Button type="primary" onClick={register}>Register</Button>
             </div>
 
         </div>

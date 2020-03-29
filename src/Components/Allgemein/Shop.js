@@ -82,10 +82,10 @@ function Shop(probs) {
 
     return(
         <div className="Shop">
-            <h1>Shop <div> <button  onClick={home}>home</button> </div></h1>
+            <h1>Shop <div> <Button type="primary" onClick={home}>home</Button> </div></h1>
             <div>
                 <Table columns = {colums} dataSource = {tabledata}/>
-                <button onClick={nextOnClick}>Next</button>
+                <Button type="primary" onClick={nextOnClick}>Next</Button>
             </div>
         </div>
     );

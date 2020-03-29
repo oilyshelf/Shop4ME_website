@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import "./Register.css"
 import {Select} from 'antd';
+import {Button} from "antd";
+import {Input} from "antd";
 import logo from "../../Bilder/register.png";
 
 function Register(probs) {
@@ -137,20 +139,20 @@ function Register(probs) {
 
 
 
-            <h1><img src={logo} width="180px" height="90px" align="center" alt="Register"/> <div> <button  onClick={home}>home</button> </div></h1>
+            <h1><img src={logo} width="180px" height="90px" align="center" alt="Register"/> <div> <Button type="primary"  onClick={home}>home</Button> </div></h1>
             <div>
-                <input className="Register" value={RegisterInfo.Vorname} placeholder="Vorname" onChange={VornameChanger.bind(this)}/>
-                <input className="Register" value={RegisterInfo.Nachname} placeholder="Nachname" onChange={NachnameChanger.bind(this)}/><br/>
-                <input className="Register" value={RegisterInfo.email} placeholder="E-Mail" onChange={emailChanger.bind(this)}/><br/>
-                <input className="Register" value={RegisterInfo.password} placeholder="Passwort" onChange={passwordChanger.bind(this)} type="password"/><br/>
-                <input className="Register" value={RegisterInfo.password2} placeholder="Passwort wiederholen" onChange={password2Changer.bind(this)} type="password"/><br/>
+                <Input className="Register" value={RegisterInfo.Vorname} placeholder="Vorname" onChange={VornameChanger.bind(this)}/>
+                <Input className="Register" value={RegisterInfo.Nachname} placeholder="Nachname" onChange={NachnameChanger.bind(this)}/><br/>
+                <Input className="Register" value={RegisterInfo.email} placeholder="E-Mail" onChange={emailChanger.bind(this)}/><br/>
+                <Input className="Register" value={RegisterInfo.password} placeholder="Passwort" onChange={passwordChanger.bind(this)} type="password"/><br/>
+                <Input className="Register" value={RegisterInfo.password2} placeholder="Passwort wiederholen" onChange={password2Changer.bind(this)} type="password"/><br/>
 
 
 
-                <input className="Register" value={adressInfo.adress} placeholder="Adresse" onChange={adressChanger.bind(this)}/>
-                <input className="Register" value={adressInfo.Hausnummer} placeholder="Nr." onChange={HausnummerChanger.bind(this)}/><br/>
-                <input className="Register" value={adressInfo.PLZ} placeholder="PLZ" onChange={PLZChanger.bind(this)}/><br/>
-                <input className="Register" value={adressInfo.Ort} placeholder="Ort" onChange={OrtChanger.bind(this)}/><br/>
+                <Input className="Register" value={adressInfo.adress} placeholder="Adresse" onChange={adressChanger.bind(this)}/>
+                <Input className="Register" value={adressInfo.Hausnummer} placeholder="Nr." onChange={HausnummerChanger.bind(this)}/><br/>
+                <Input className="Register" value={adressInfo.PLZ} placeholder="PLZ" onChange={PLZChanger.bind(this)}/><br/>
+                <Input className="Register" value={adressInfo.Ort} placeholder="Ort" onChange={OrtChanger.bind(this)}/><br/>
                 <Select className="Register" defaultValue={"Bayern"}  onChange={BundeslandChanger}>
                     <Option value = "Bayern">Bayern</Option>
                     <Option value = "Baden-Württemberg">Baden-Württemberg</Option>
@@ -173,7 +175,7 @@ function Register(probs) {
                 {/*  Bundesland in selection umschreiben
                         rausfinden warum register.css für alle gilt */}
 
-                <button className="Register" onClick={sendRegisterDaten}>Registrieren</button>
+                <Button type="primary" className="Register" onClick={sendRegisterDaten}>Registrieren</Button>
 
             </div>
 
