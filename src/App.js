@@ -16,12 +16,18 @@ function App() {
        //connect();
     },[]);
 
-
+    const mystyle = {
+        color: "white",
+        backgroundColor: "DodgerBlue",
+        padding: "10px",
+        fontFamily: "Arial"
+    };
 
   return (
       <Router>
         <div >
-            <header><img src={logo} width="150px" height="150px" align="left" alt="Shop4Me"/> </header>
+            <h1 style={mystyle}><img src={logo} width="150px" height="150px" align="center" alt="Shop4Me"/> </h1>
+
 
           <Switch>
             <Route path = "/" exact component={Home} />
