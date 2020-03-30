@@ -7,7 +7,7 @@ import 'antd/dist/antd.css';
 import Login from "./Components/Bringer/Login";
 import Shop from "./Components/Allgemein/Shop";
 import Register from "./Components/Bringer/Register";
-import logo from './Bilder/Shop4Me.png'
+import logo from './Bilder/Logorosti2.svg'
 import Auftrag from "./Components/Bringer/Auftrag";
 import MeinAuftrag from "./Components/Bringer/meinAuftrag";
 import DerAuftrag from "./Components/Bringer/derAuftrag";
@@ -29,7 +29,7 @@ function App() {
   return (
       <Router>
         <div className="container">
-            <h1><img src={logo} width="280px" height="100px" align="center" alt="Shop4Me"/> </h1>
+            <h1><img src={logo} width="200px" height="200px" align="center" alt="Shop4Me"/> </h1>
 
 
           <Switch>

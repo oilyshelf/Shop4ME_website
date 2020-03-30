@@ -24,9 +24,9 @@ function Bestellung(probs) {
     ));
 
     const onFinish = values => {
-        console.log(values.user.name);
+
         let message = {action: "makeErrand", postcode: values.user.postcode, email: values.user.email,phone_number: values.user.phone_number,
-        notice: values.user.notice, items: shopList}
+        notice: values.user.notice, items: shopList};
         command(JSON.stringify(message),probs.history)
         };
 
@@ -44,20 +44,7 @@ function Bestellung(probs) {
 
 
             <Form {...layout} name="nest-messages" onFinish={onFinish} >
-                <Form.Item
-                    name={['user', 'name']}
-                    label="Name"
 
-                >
-                    <Input />
-                </Form.Item>
-                <Form.Item
-                    name={['user', 'firstname']}
-                    label="Firstname"
-
-                >
-                    <Input />
-                </Form.Item>
                 <Form.Item
                     name={['user', 'email']}
                     label="Email"

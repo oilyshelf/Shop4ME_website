@@ -64,7 +64,7 @@ function Shop(probs) {
             console.log(record.item_name);
             addToList(record.item_id);
             record.amount = sList[record.item_id];
-        }} >add {record.name} to shooping card</Button>
+        }} >add {record.item_name} to shooping card</Button>
         <Button onClick={()=>{
             removeToList(record.item_id);
         }}>remove 1 from List</Button>
