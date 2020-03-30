@@ -4,6 +4,7 @@ import {Table,Button} from "antd";
 import {useDispatch, useSelector} from "react-redux";
 import {setItems, setShoopingList} from "../../redux/actions";
 import {command} from "../../Connection/Websocket";
+import logo from "../../Bilder/shop.png";
 
 function Shop(probs) {
     const dispatch = useDispatch();
@@ -95,7 +96,7 @@ function Shop(probs) {
 
     return(
         <div className="Shop">
-            <h1>Shop <div> <Button type="primary" onClick={home}>home</Button> </div></h1>
+            <h1><img src={logo} width="180px" height="90px" align="center" alt="Register"/> <div> <Button type="primary" onClick={home}>home</Button> </div></h1>
             <div>
                 <Table columns = {colums} dataSource = {tabledata}/>
                 <Button type="primary" onClick={nextOnClick}>make errand</Button>
