@@ -20,7 +20,7 @@ function Bestellung(probs) {
     };
 
     const data = shopList.map(a=>(
-        <li key={a.item_id}>{a.item_id} - {info[a.item_id].item_name} Amount:  {a.amount}</li>
+        <li key={a.item_id}>{a.item_id} - {info[(a.item_id)-1].item_name} Amount:  {a.amount}</li>
     ));
 
     const onFinish = values => {
