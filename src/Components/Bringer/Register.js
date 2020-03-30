@@ -4,6 +4,7 @@ import {Select} from 'antd';
 import {Button} from "antd";
 import {Input} from "antd";
 import logo from "../../Bilder/register.png";
+import {command} from "../../Connection/Websocket";
 
 function Register(probs) {
 
@@ -111,11 +112,33 @@ function Register(probs) {
         });
     };
 
+    const checkPW =()=>{
+        return RegisterInfo.password === RegisterInfo.password2
+    };
+
+    const checkInputs =()=>{
+        let x;
+      for (x in RegisterInfo){
+          if (RegisterInfo[x] ===""){
+              return false
+          }}
+      for (x in adressInfo){
+          if (adressInfo[x] ===""){
+              return false
+          }}
+      return true
+    };
+
 
     const sendRegisterDaten=()=>{
-        console.log(RegisterInfo.email + " "+ RegisterInfo.password + " " + RegisterInfo.passwort2 +" "
-            + RegisterInfo.Vorname +" "+ RegisterInfo.Nachname +" "+ adressInfo.adress +" "+ adressInfo.Hausnummer +" "
-            + adressInfo.PLZ +" "+ adressInfo.Ort +" "+ adressInfo.Bundesland);
+
+        if(checkPW() && checkInputs() ){
+            let message = {action: "register", last_name:RegisterInfo.Nachname, first_name: RegisterInfo.Vorname, postcode: adressInfo.PLZ, street: adressInfo.adress,house_number: adressInfo.Hausnummer, password: RegisterInfo.password,email: RegisterInfo.email};
+            console.log(message);
+            command(JSON.stringify(message),probs.history)
+        }else{
+            alert("password must be the same or missing input")
+        }
     };
 
     const mystyle = {
@@ -153,7 +176,7 @@ function Register(probs) {
                 <Input className="Register" value={adressInfo.Hausnummer} placeholder="Nr." onChange={HausnummerChanger.bind(this)}/><br/>
                 <Input className="Register" value={adressInfo.PLZ} placeholder="PLZ" onChange={PLZChanger.bind(this)}/><br/>
                 <Input className="Register" value={adressInfo.Ort} placeholder="Ort" onChange={OrtChanger.bind(this)}/><br/>
-                <Select className="Register" defaultValue={"Bayern"}  onChange={BundeslandChanger}>
+                <Select className="Register" defaultValue={"Bundesland"}  onChange={BundeslandChanger}>
                     <Option value = "Bayern">Bayern</Option>
                     <Option value = "Baden-Württemberg">Baden-Württemberg</Option>
                     <Option value = "Berlin">Berlin</Option>

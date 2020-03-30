@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Form, Input, InputNumber, Button,List } from 'antd';
 import {useSelector} from "react-redux";
+import {command} from "../../Connection/Websocket";
 
 
 function Bestellung(probs) {
@@ -19,11 +20,14 @@ function Bestellung(probs) {
     };
 
     const data = shopList.map(a=>(
-        <li key={a.item_id}>{a.item_id} - {info[a.item_id].name} Amount:  {a.amount}</li>
+        <li key={a.item_id}>{a.item_id} - {info[a.item_id].item_name} Amount:  {a.amount}</li>
     ));
 
     const onFinish = values => {
-        console.log(values);
+        console.log(values.user.name);
+        let message = {action: "makeErrand", postcode: values.user.postcode, email: values.user.email,phone_number: values.user.phone_number,
+        notice: values.user.notice, items: shopList}
+        command(JSON.stringify(message),probs.history)
         };
 
         return (
@@ -48,6 +52,13 @@ function Bestellung(probs) {
                     <Input />
                 </Form.Item>
                 <Form.Item
+                    name={['user', 'firstname']}
+                    label="Firstname"
+
+                >
+                    <Input />
+                </Form.Item>
+                <Form.Item
                     name={['user', 'email']}
                     label="Email"
                     rules={[
@@ -59,18 +70,18 @@ function Bestellung(probs) {
                     <Input />
                 </Form.Item>
                 <Form.Item
-                    name={['user', 'age']}
+                    name={['user', 'phone_number']}
                     label="Phonenumber"
                 >
                     <Input />
                 </Form.Item>
                 <Form.Item
-                    name={['user', 'age']}
+                    name={['user', 'postcode']}
                     label="PLZ"
                 >
                     <Input />
                 </Form.Item>
-                <Form.Item name={['user', 'introduction']} label="Notes">
+                <Form.Item name={['user', 'notice']} label="Notes">
                     <Input.TextArea />
                 </Form.Item>
                 <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 4 }}>

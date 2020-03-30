@@ -1,12 +1,14 @@
 import React, {useState} from "react";
 import {Input} from "antd";
 import {Button,Table} from "antd";
+import {useSelector} from "react-redux";
+import {command} from "../../Connection/Websocket";
 
 function Auftrag(probs) {
 
     const {Search} = Input;
-
-    const exampleData = [{errand_id:0, postcode:4897},{errand_id:1, postcode:4597},{errand_id:2, postcode:4897}];
+    const sessionID = useSelector(state=>state.sessionID);
+    const exampleData = useSelector(state=>state.errandList);
     const columns = [{title:"Errnad_Id", dataIndex:"errand_id"}, {title: "Postcode", dataIndex: "postcode"}, {
         title: 'Action',
         key: 'action',
@@ -14,7 +16,8 @@ function Auftrag(probs) {
             <span>
         <Button onClick={()=>{
             console.log(record);
-            probs.history.push("/Errand/"+record.errand_id);
+            command(JSON.stringify({action:"getErrand", sessionID: sessionID, errandID: record.errand_id}),probs.history);
+            //probs.history.push("/Errand/"+record.errand_id);
 
         }} >View Details</Button>
 
@@ -28,12 +31,13 @@ function Auftrag(probs) {
 
             <Search
                 placeholder="postcode"
-                onSearch={value => console.log(value)}
+                onSearch={value => command(JSON.stringify({action:"getErrands", sessionID: sessionID, postcode: value}),probs.history)}
                 style={{width: 400}}
                 />
 
 
                  <Button type="primary"  onClick={()=>{
+                     command(JSON.stringify({action:"getErrands", sessionID: sessionID, postcode: -1}),probs.history);
                      probs.history.push("/myErrands");
                  }}>meine Aufträge</Button>
 

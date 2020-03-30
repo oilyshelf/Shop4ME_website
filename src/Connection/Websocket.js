@@ -14,7 +14,7 @@ let his;
 //use this function to connect the websocket
 export const connect = () => {
     //ws = new WebSocket("ws://localhost:8887");  //läuft erstmal über localhost
-    ws = new WebSocket("ws://localhost:5555");
+    ws = new WebSocket("ws://localhost:6789");
     var connectInterval;
 
     // websocket onopen event listener

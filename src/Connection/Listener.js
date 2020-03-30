@@ -40,8 +40,8 @@ export const listenManager = (json, history) =>
 const LoginListener=(json,history)=> {
     if(json.Success){
         store.dispatch(login());
-        store.dispatch(setSessionID(json.sessionID));
-        history.push("/Rooms");
+        store.dispatch(setSessionID(json.SessionID));
+        history.push("/Errand");
     }else{
         alert(json.error)
     }
@@ -83,7 +83,7 @@ const getErrandsLis=(json, history)=>{
 const getErrandLis=(json, history)=>{
     if(json.Success){
         store.dispatch(setErrand(json.errand));
-        history.push("/Errand"+json.errand.errand_id);
+        history.push("/Errand/"+json.errand.errand_id);
     }else {
         alert("Something went wrong please try again")
     }
@@ -91,18 +91,18 @@ const getErrandLis=(json, history)=>{
 
 const takeErrandLis =(json, history)=>{
   if(json.Success){
-      history.push("/myErrands");
+      history.push("/Errand");
       alert("Errand Accepted");
   }else {
-      history.push("/Errands");
+      history.push("/Errand");
       alert("Errand already taken");
   }
 };
 
 const makeErrandLis=(json, history)=>{
   if(json.Success){
-      store.dispatch(setShoopingList(""));
       history.push("/");
+      store.dispatch(setShoopingList([]));
       alert("Your errand was created pls wait for a Notifaction from our Bringerteam");
   }else {
       alert("Something went wrong please try again")

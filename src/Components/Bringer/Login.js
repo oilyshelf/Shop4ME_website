@@ -4,6 +4,8 @@ import {Checkbox} from "antd";
 import logo from "../../Bilder/login.png";
 import {Button} from "antd";
 import {Input} from "antd";
+import {command} from "../../Connection/Websocket";
+import {login} from "../../redux/actions";
 
 function Login(probs) {
 
@@ -23,7 +25,7 @@ function Login(probs) {
         });
     };
     const sendLoginDaten=()=>{
-      console.log(loginInfos.email + " "+ loginInfos.password);
+      command(JSON.stringify({action:"login", email: loginInfos.email, password: loginInfos.password}),probs.history)
     };
 
 

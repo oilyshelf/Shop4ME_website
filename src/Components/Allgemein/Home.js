@@ -1,9 +1,12 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./Home.css"
 import logo from "./../../Bilder/home.png"
 import {Button} from "antd";
+import {command} from "../../Connection/Websocket";
 
 function Home(probs) {
+
+
 
     const shop=()=>{
         probs.history.push("/shop");

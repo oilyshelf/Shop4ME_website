@@ -1,9 +1,12 @@
 import React, {useState} from "react";
 import {Button,Table} from "antd";
+import {useSelector} from "react-redux";
+import {command} from "../../Connection/Websocket";
 
-function meinAuftrag(probs)
+function MeinAuftrag(probs)
 {
-    const exampleData = [{errand_id:0, postcode:4897},{errand_id:1, postcode:4597},{errand_id:2, postcode:4897}];
+    const exampleData = useSelector(state=>state.errandList);
+    const sessionID = useSelector(state=>state.sessionID);
     const columns = [{title:"Errnad_Id", dataIndex:"errand_id"}, {title: "Postcode", dataIndex: "postcode"}, {
         title: 'Action',
         key: 'action',
@@ -11,7 +14,9 @@ function meinAuftrag(probs)
             <span>
         <Button onClick={()=>{
             console.log(record);
-            probs.history.push("/Errand/"+record.errand_id);
+
+            command(JSON.stringify({action:"getErrand", sessionID: sessionID, errandID: record.errand_id}),probs.history);
+            //probs.history.push("/Errand/"+record.errand_id);
 
         }} >View Details</Button>
 
@@ -35,4 +40,4 @@ function meinAuftrag(probs)
     );
 }
 
-export default meinAuftrag;
+export default MeinAuftrag;
